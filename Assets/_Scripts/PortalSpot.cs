@@ -46,7 +46,10 @@ public class PortalSpot : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Check for teleport position
+            float zPos = transform.InverseTransformPoint(playerCamera.position).z;
+            //print(zPos);
+            if (zPos > 0)
+                teleportPlayer();
         }
     }
 
@@ -58,5 +61,20 @@ public class PortalSpot : MonoBehaviour
         Vector3 RotatedPos = Rot180 * LocalPos;
         portalCamera.position = destination.transform.TransformPoint(RotatedPos);
         portalCamera.rotation = destination.transform.rotation * Rot180 * Quaternion.Inverse(transform.rotation) * playerCamera.rotation;
+    }
+
+    void teleportPlayer()
+    {
+        //print("Teleporting to: " + destination.gameObject.name);
+
+        Transform player = playerCamera.parent;
+
+        Vector3 newPos = destination.transform.TransformPoint(transform.InverseTransformPoint(player.position)) - destination.transform.forward*0.1f;
+        player.position = newPos;
+
+        player.rotation = Quaternion.Euler(0, portalCamera.rotation.eulerAngles.y, 0);
+
+        // The fucking fuck did you just say to me
+        player.SendMessage("ReInitMouseLook");
     }
 }

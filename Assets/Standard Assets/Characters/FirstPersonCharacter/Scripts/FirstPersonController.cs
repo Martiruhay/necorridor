@@ -84,6 +84,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+        public void ReInitMouseLook()
+        {
+            //print("Message recieved");
+            m_MouseLook.Init(transform, m_Camera.transform);
+        }
+
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
