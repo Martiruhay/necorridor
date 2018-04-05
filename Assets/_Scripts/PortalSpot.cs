@@ -77,6 +77,6 @@ public class PortalSpot : MonoBehaviour
         player.rotation = Quaternion.Euler(0, portalCamera.rotation.eulerAngles.y, 0);
 
         // The fucking fuck did you just say to me
-        player.SendMessage("ReInitMouseLook");
+        player.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().ReInitMouseLook();
     }
 }
