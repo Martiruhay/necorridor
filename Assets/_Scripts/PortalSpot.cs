@@ -69,8 +69,10 @@ public class PortalSpot : MonoBehaviour
 
         Transform player = playerCamera.parent;
 
-        Vector3 newPos = destination.transform.TransformPoint(transform.InverseTransformPoint(player.position)) - destination.transform.forward*0.1f;
-        player.position = newPos;
+        Vector3 localPos = transform.InverseTransformPoint(player.position);
+        localPos.x *= -1;
+        localPos.z *= -1;
+        player.position = destination.transform.TransformPoint(localPos);// - destination.transform.forward*0.01f;
 
         player.rotation = Quaternion.Euler(0, portalCamera.rotation.eulerAngles.y, 0);
 

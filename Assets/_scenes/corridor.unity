@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 300469946}
-  m_IndirectSpecularColor: {r: 0.03679046, g: 0.09471225, b: 0.12808093, a: 1}
+  m_IndirectSpecularColor: {r: 0.022981692, g: 0.07327721, b: 0.102184825, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -171,12 +171,6 @@ Prefab:
     - {fileID: 65593473250807668, guid: e9148ecc8329296448704f30f9ab1a6a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e9148ecc8329296448704f30f9ab1a6a, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &25147286 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114017482981796844, guid: e9148ecc8329296448704f30f9ab1a6a,
-    type: 2}
-  m_PrefabInternal: {fileID: 25147285}
-  m_Script: {fileID: 11500000, guid: 2dea8c79071d8c049acf28114bd4e9a3, type: 3}
 --- !u!114 &287710825 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114017482981796844, guid: e9148ecc8329296448704f30f9ab1a6a,
@@ -449,7 +443,7 @@ Prefab:
         type: 2}
       propertyPath: destination
       value: 
-      objectReference: {fileID: 25147286}
+      objectReference: {fileID: 287710825}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9148ecc8329296448704f30f9ab1a6a, type: 2}
   m_IsPrefabParent: 0
@@ -518,7 +512,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: near clip plane
-      value: 0.1
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_RunSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_WalkSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -929,7 +931,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1604577322}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
